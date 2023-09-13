@@ -3,6 +3,7 @@ import random
 import typing
 import pyjokes
 from prettytable import PrettyTable
+from script_background_music import play_music_in_background
 
 
 action_movies = {
@@ -222,4 +223,7 @@ def draw_menu():
                 print('Bye bye')
                 break
 
-draw_menu()
+
+if __name__ == '__main__':
+    play_music_in_background()
+    draw_menu()
