@@ -30,7 +30,7 @@ horror_movies = {
 
 def tell_a_joke():
     """Tell a joke"""
-    return pyjokes.get_joke('en', category='all')
+    print(pyjokes.get_joke('en', category='all'))
 
 
 def draw_pretty_table(cols: typing.List[str], rows: typing.Dict):
@@ -42,8 +42,15 @@ def draw_pretty_table(cols: typing.List[str], rows: typing.Dict):
     print(pretty_table)
 
 
-def print_movies(genre: typing.Literal['action', 'horror']):
+def select_genre():
+    """Selects genre"""
+    print('Input genre: action | horror')
+    return input()
+
+
+def print_movies():
     """Prints movies"""
+    genre = select_genre()
     movie_params = ['Movie name', 'Year']
     movies_to_print = {}
     match genre:
@@ -51,6 +58,7 @@ def print_movies(genre: typing.Literal['action', 'horror']):
             movies_to_print = action_movies
         case 'horror':
             movies_to_print = horror_movies
+    print(f'Here\'s a list of best movies in {genre} genre')
     draw_pretty_table(movie_params, movies_to_print)
 
 
@@ -125,7 +133,7 @@ Action:
             continue
 
         user_choice = user_choices[user_choice_key]
-        print('You:', user_choice, 'PC:', pc_choice)
+        print('\nYou:', user_choice, 'PC:', pc_choice)
         winning_conditions = dict({
             'rock': 'scissors',
             'paper': 'rock',
@@ -134,6 +142,7 @@ Action:
 
         if user_choice == pc_choice:
             print('\nA draw. Try again!')
+            print_current_score()
             continue
 
         for key, value in winning_conditions.items():
@@ -183,6 +192,20 @@ def guess_the_number():
             break
 
 
+def select_game():
+    """Selects a game"""
+    game_choice = input('''
+Press number of a game
+1. Rock Paper Scissors
+2. Guess the number
+''')
+    match game_choice:
+        case '1':
+            rock_paper_scissors()
+        case '2':
+            guess_the_number()
+
+
 def draw_menu():
     """Drawing main menu"""
     print('Hello! I\'m a chat bot and here\'s what I can do: ')
@@ -190,24 +213,11 @@ def draw_menu():
         choice = main_menu_choice()
         match choice:
             case '1':
-                print(tell_a_joke())
+                tell_a_joke()
             case '2':
-                print('Input genre: action | horror')
-                genre = input()
-                print()
-                print(f'Here\'s a list of best movies in {genre} genre')
-                print_movies(genre)
+                print_movies()
             case '3':
-                game_choice = input('''
-Press number of a game
-1. Rock Paper Scissors
-2. Guess the number
-''')
-                match game_choice:
-                    case '1':
-                        rock_paper_scissors()
-                    case '2':
-                        guess_the_number()
+                select_game()
             case '4':
                 print('Bye bye')
                 break
