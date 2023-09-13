@@ -1,7 +1,6 @@
 """Recomment movie module"""
 import typing
 from prettytable import PrettyTable
-import pyjokes
 
 
 action_movies = {
@@ -25,11 +24,6 @@ horror_movies = {
     'Sinister': '2012',
     'Insidious': '2010'
 }
-
-
-def tell_a_joke():
-    """Tell a joke"""
-    print(pyjokes.get_joke('en', category='all'))
 
 
 def draw_pretty_table(cols: typing.List[str], rows: typing.Dict):

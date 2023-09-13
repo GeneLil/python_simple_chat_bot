@@ -1,6 +1,6 @@
 """Chat bot"""
 from script_background_music import play_music_in_background
-from modules.games.select_game import select_game
+from modules.select_game import select_game
 from modules.recommend_movie import print_movies
 from modules.tell_a_joke import tell_a_joke
 
