@@ -168,26 +168,26 @@ def guess_the_number():
             print('Entered wrong symbol, try again!')
             continue
 
-        diff = random_number - int(users_num)
-        if abs(diff) >= 100:
+        diff = abs(random_number - int(users_num))
+        if diff >= 100:
             print('So cold! Try again!')
             tries += 1
-        elif abs(diff) >= 50:
+        elif diff >= 50:
             print('Nice guess, but still cold!')
             tries += 1
-        elif 50 > abs(diff) >= 20:
+        elif 50 > diff >= 20:
             print('It\'s getting warmer!')
             tries += 1
-        elif 20 > abs(diff) >= 10:
+        elif 20 > diff >= 10:
             print('It is getting hotter now!')
             tries += 1
-        elif 10 > abs(diff) >= 5:
+        elif 10 > diff >= 5:
             print('It is very hot!')
             tries += 1
-        elif 5 > abs(diff) >= 1:
+        elif 5 > diff >= 1:
             print('It is hell!')
             tries += 1
-        elif abs(diff) == 0:
+        elif diff == 0:
             print(f'You have won with {tries} tries!')
             break
 
