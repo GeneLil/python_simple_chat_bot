@@ -1,14 +1,8 @@
 """Chat bot"""
-import pyjokes
 from script_background_music import play_music_in_background
-from games.rock_paper_scissors import rock_paper_scissors
-from games.guess_number import guess_the_number
-from recommend_movie import print_movies
-
-
-def tell_a_joke():
-    """Tell a joke"""
-    print(pyjokes.get_joke('en', category='all'))
+from modules.games.select_game import select_game
+from modules.recommend_movie import print_movies
+from modules.tell_a_joke import tell_a_joke
 
 
 def main_menu_choice():
@@ -20,20 +14,6 @@ Menu:
 3. Play a game.
 4. Exit
 ''')
-
-
-def select_game():
-    """Selects a game"""
-    game_choice = input('''
-Press number of a game
-1. Rock Paper Scissors
-2. Guess the number
-''')
-    match game_choice:
-        case '1':
-            rock_paper_scissors()
-        case '2':
-            guess_the_number()
 
 
 def draw_menu():
