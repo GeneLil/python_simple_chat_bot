@@ -3,6 +3,7 @@ from script_background_music import play_music_in_background
 from modules.select_game import select_game
 from modules.recommend_movie import print_movies
 from modules.tell_a_joke import tell_a_joke
+from modules.get_weather import get_weather
 
 
 def main_menu_choice():
@@ -12,7 +13,8 @@ Menu:
 1. Tell a joke to start the day!
 2. Recommend a movie.
 3. Play a game.
-4. Exit
+4. Get weather
+5.Exit
 ''')
 
 
@@ -29,6 +31,8 @@ def draw_menu():
             case '3':
                 select_game()
             case '4':
+                get_weather()
+            case '5':
                 print('Bye bye')
                 break
 
