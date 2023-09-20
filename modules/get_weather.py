@@ -1,7 +1,7 @@
 import requests
 import json
 
-API = '7a759200edfe63c5037f38d9f1770594'
+API = 'API token'
 
 
 def get_weather():
