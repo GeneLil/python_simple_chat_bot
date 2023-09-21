@@ -4,6 +4,7 @@ from modules.select_game import select_game
 from modules.recommend_movie import print_movies
 from modules.tell_a_joke import tell_a_joke
 from modules.get_weather import get_weather
+from modules.get_quote import get_quote
 
 
 def main_menu_choice():
@@ -14,7 +15,8 @@ Menu:
 2. Recommend a movie.
 3. Play a game.
 4. Get weather
-5.Exit
+5. Get a quote
+6. Exit
 ''')
 
 
@@ -33,6 +35,8 @@ def draw_menu():
             case '4':
                 get_weather()
             case '5':
+                print(get_quote())
+            case '6':
                 print('Bye bye')
                 break
 
