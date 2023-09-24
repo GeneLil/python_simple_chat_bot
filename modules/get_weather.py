@@ -1,8 +1,8 @@
-import requests
+"""Requests weater"""
 import json
+import requests
 
 API = 'API token'
-
 
 def get_weather():
     """Shows weather in entered city"""
@@ -22,4 +22,5 @@ def get_weather():
             The wind speed is: {temp['wind speed']}
 """)
     else:
+        print(res.status_code)
         print('The name of the city is entered incorrectly!')
